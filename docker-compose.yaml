@@ -21,3 +21,24 @@ services:
       - front1
       - front2
       - front3
+
+  back1:
+    build: ./back
+    ports:
+      - "85:80"
+  back2:
+    build: ./back
+    ports:
+      - "86:80"
+  back3:
+    build: ./back
+    ports:
+      - "87:80"
+  nginx_back:
+    build: ./nginx-back
+    ports:
+      - "84:80"
+    depends_on:
+     - back1
+     - back2
+     - back3
