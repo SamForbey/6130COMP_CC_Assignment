@@ -15,11 +15,9 @@ services:
 
   nginx-front:
     build: ./nginx-front
-  ports:
-    - "80:80"
-  depends_on:
-    - front1
-    - front2
-    - front3
-
-
+    ports:
+      - "80:80"
+    depends_on:
+      - front1
+      - front2
+      - front3
